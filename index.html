@@ -14,24 +14,36 @@
 	<div class="container">
 		<div class="row">
 			<div class="col left">
-				<div id="rezultatas">
-					0
-				</div>
+				<div id="rezultatas">0</div>
 			</div>
-			<div class="col right">0</div>
+			<div class="col right">
+				<input id="a" class="form-control" type="text" name="a">
+				<input id="b" class="form-control" type="text" name="b">
+				<button onclick="calc()" class="btn btn-lg btn-outline-dark">Go!</button>
+			</div>
 		</div>
 	</div>
 </body>
 </html>
 
 <script>
-	// Komentaras
-
+	// aprasomi naudojami kintamieji
 	var a, b, sum;
-	a = 7;
-	b = 3;
+	
+	// apra6oma funkcija
+	function calc () {
+		
+		// gaunamos lauku reik6mes
+		a = parseInt(document.getElementById('a').value);
+		b = parseInt(document.getElementById('b').value);
 
-	sum = a + b; 
-	document.getElementById('rezultatas').innerHTML = "Rezultatas yra " + sum;
+		// reiksmes sumuojamos
+		sum = (a + b) / b + a * b; 
 
+		// rezultatas atvaizduojams puyslapyje
+		document.getElementById('rezultatas').innerHTML = "Rezultatas yra " + sum;
+		document.getElementById('rezultatas').style.color ="green";
+	
+	}
+	
 </script>
