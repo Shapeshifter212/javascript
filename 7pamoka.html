@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Namu darbas</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="7pamoka.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-fluid">
+    	<div class="row head">
+	    	<h1>JavaScript</h1>
+    		
+    	</div>
+    </div>
+    <div class="container">
+    	<div class="row">
+    		<div id="lucky_numbers">None</div>
+    	</div>
+	    <div class="row">
+	    	<div class="col left">
+			    <div class="row">
+			    	<div class="col-sm inn" id="0">0</div>
+			    	<div class="col-sm inn" id="1">1</div>
+			    	<div class="col-sm inn" id="2">2</div>
+			    	<div class="col-sm inn" id="3">3</div>
+		    		<div class="col-sm inn" id="4">4</div>
+		    		<div class="col-sm inn" id="5">5</div>
+		    		<div class="col-sm inn" id="6">6</div>
+		    		<div class="col-sm inn" id="7">7</div>
+		    		<div class="col-sm inn" id="8">8</div>
+		    		<div class="col-sm inn" id="9">9</div>
+		    	</div>
+		    	<div id="mega_number">LAIMINGAS SKAIČIUS</div>
+	    	</div>
+	    	<div class="col right">
+	    	    <button onclick="get_number()" class="btn btl-lg btn-outline-dark">Rink!</button>
+	    	    <button onclick="new_game()" class="btn btl-lg btn-outline-dark">Naujas</button>
+	    	</div>
+	    </div>
+    	
+    </div>
+    <script>
+
+var lucky = [];
+var gameover = false;
+var div_ln = document.getElementById('lucky_numbers');
+    	
+function get_number() {
+
+    if (!gameover) {
+
+    	clear_table();
+	
+		var skaicius;
+	    skaicius = Math.floor(Math.random() * 10);  
+	    document.getElementById(skaicius).style.backgroundColor = "red";
+
+	    lucky.push(skaicius);
+
+	    div_ln.innerHTML = lucky;
+	    document.getElementById('mega_number').innerHTML = skaicius;
+	 }
+	 check_gameover();
+
+}
+	
+function clear_table () {	
+	for (var i  = 0; i <= 9; i++) {
+	    	document.getElementById(i).style.backgroundColor = "grey";
+	 }
+}
+
+function check_gameover () {
+	if (lucky.length < 8) {
+			// zaidimas tesiasi
+	} else {
+			alert("Kaput");  
+			gameover = true;//zaidimas baigiasi
+	}
+}
+
+function new_game() {
+
+	if (gameover) {
+		gameover = false;
+		lucky = [];
+		div_ln.innerHTML = "New game started";
+	}
+	else {
+		alert("Game is not over")
+	}
+}
+
+    </script>
+
+</body>
+</html>
