@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Namu darbas</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="nd1.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container-fluid">
+    	<div class="row head">
+	    	<h1>JavaScript</h1>
+    		
+    	</div>
+    </div>
+    <div class="container">
+	    <div class="row">
+	    	<div class="col left">
+			    <div class="row">
+			    	<div class="col-sm inner" id="sq_1">1</div>
+			    	<div class="col-sm inner" id="sq_2">2</div>
+			    	<div class="col-sm inner" id="sq_3">3</div>
+		    	</div>	
+		    	<div class="row">
+		    		<div class="col-sm inner" id="sq_4">4</div>
+		    		<div class="col-sm inner" id="sq_5">5</div>
+		    		<div class="col-sm inner" id="sq_6">6</div>
+		    	</div>	
+		    	<div class="row">
+		    		<div class="col-sm inner" id="sq_7">7</div>
+		    		<div class="col-sm inner" id="sq_8">8</div>
+		    		<div class="col-sm inner" id="sq_9">9</div>
+		    	</div>	
+	    	</div>
+	    	<div class="col right">
+	    	    
+	    		<button onclick="calc()" class="btn btl-lg btn-outline-dark">Pakeisti atsitiktinį langelį</button>
+	    	</div>
+	    </div>
+    	
+    </div>
+    <script>
+    	
+    	var suma;
+    	function calc() {
+	
+	
+	    suma=Math.floor(Math.random() * 9) + 1  
+
+
+		document.getElementById("sq_" + suma). innerHTML = + suma;
+		document.getElementById('sq_' + suma).style.backgroundColor = "red";
+	}
+    </script>
+
+</body>
+</html>

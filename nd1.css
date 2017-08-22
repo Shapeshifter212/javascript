@@ -1,0 +1,28 @@
+.head{
+	background: orange;
+	color: black;
+	padding: 50px;
+
+}
+.left {
+	padding: 30px;
+	background-color: grey;
+	color: white;
+	float: center;
+
+}
+.right{
+	padding: 10px;
+	background-color: gray;
+	color: orange;
+}
+
+.inner {
+	color: white;
+	background-color: grey;
+	border:1px solid white;
+    font-size: 50px;
+    margin: 1px;
+    padding: 30px;
+    text-align: center
+    }
